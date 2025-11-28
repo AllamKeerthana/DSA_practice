@@ -20,4 +20,3 @@ public class rotation_arr {
         }
     }
 }
-}
