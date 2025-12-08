@@ -15,6 +15,12 @@ public class single_number_1 {
         }
         
         return -1;
+        // optimal approach using bit manipulation using XOR
+        // int sum = 0;
+        // for(int i : nums){
+        //     sum = sum ^ i;
+        // }
+        // return sum;
     }
 }
 
