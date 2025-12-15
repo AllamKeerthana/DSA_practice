@@ -1,4 +1,4 @@
-class long_substr_chr {
+class longest_substr_chr {
     public static void main(String[] args) {
         String s = "abcdaaabbbdfffff";
         String longest = "";

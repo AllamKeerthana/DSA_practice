@@ -1,4 +1,4 @@
-class addDigits {
+class addDigit {
     public int addDigits(int num) {
         while (num >= 10) {
             int sum = 0;
