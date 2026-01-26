@@ -1,6 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 public class min_abs_diff {
-import java.util.*;
-
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
         Arrays.sort(arr); 
