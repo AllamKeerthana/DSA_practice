@@ -68,7 +68,7 @@ public class LL {
                 return;
             }
             Node temp = head;
-            while(temp.ext!=tail){
+            while(temp.next!=tail){
                 temp=temp.next;
             }
             
@@ -98,6 +98,24 @@ public class LL {
 
         temp.next = temp.next.next;
         size--;
+    }
+    
+    public int LenCycle(Node head){
+        Node fast = head, slow = head;
+        while(fast!=null && fast.next!=null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                int len = 0;
+                do{
+                    slow = slow.next;
+                    len++;             
+                }while(slow!=fast);
+                return len;
+            }
+
+        }
+        return 0;
     }
 
     public void display() {
