@@ -13,3 +13,9 @@ UPDATE employee SET salary = salary + 3000 WHERE department = "IT";
 SELECT name FROM employee WHERE name LIKE 'a%';
 
 DELETE FROM employee WHERE salary < 23000;
+
+SELECT COUNT(*) FROM employee;
+SELECT SUM(salary) FROM employee WHERE department = "IT";
+SELECT MIN(salary) FROM employee;
+SELECT MAX(salary) FROM employee;
+SELECT department, AVG(salary) FROM employee GROUP BY department;
