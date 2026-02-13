@@ -19,3 +19,11 @@ SELECT SUM(salary) FROM employee WHERE department = "IT";
 SELECT MIN(salary) FROM employee;
 SELECT MAX(salary) FROM employee;
 SELECT department, AVG(salary) FROM employee GROUP BY department;
+
+SELECT DISTINCT salary FROM employee ORDER BY salary DESC LIMIT 1 OFFSET 1;
+SELECT MAX(salary)
+FROM employee
+WHERE salary < (
+    SELECT MAX(salary) FROM employee
+);
+
