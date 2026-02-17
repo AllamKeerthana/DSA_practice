@@ -31,3 +31,22 @@ SELECT * FROM employee WHERE salary > (SELECT AVG(salary) FROM employee);
 SELECT * FROM employee GROUP BY department WHERE COUNT(*) > 1; 
 SELECT * FROM employee WHERE salary > (SELECT AVG(salary) FROM employee GROUP BY department);
 SELECT * FROM employee WHERE salary = ( SELECT MAX(salary) FROM employee);
+SELECT * 
+FROM employee 
+WHERE salary = (
+    SELECT MIN(salary) 
+    FROM employee
+);
+
+SELECT *
+FROM employee
+WHERE salary > (SELECT MIN(salary) FROM employee)
+AND salary < (SELECT MAX(salary) FROM employee);
+
+SELECT *
+FROM employee
+WHERE salary BETWEEN 
+      (SELECT MIN(salary) FROM employee)
+      AND
+      (SELECT MAX(salary) FROM employee);
+
