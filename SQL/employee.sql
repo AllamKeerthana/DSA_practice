@@ -50,3 +50,8 @@ WHERE salary BETWEEN
       AND
       (SELECT MAX(salary) FROM employee);
 
+SELECT * FROM employee WHERE salary NOT BETWEEN 20000 AND 30000 AND department = 'IT';
+SELECT * FROM employee WHERE salary BETWEEN 20000 AND 30000 OR department = 'sales';
+
+-- SQL operator precedence
+-- NOT , AND , OR 
