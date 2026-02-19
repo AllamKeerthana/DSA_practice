@@ -55,3 +55,17 @@ SELECT * FROM employee WHERE salary BETWEEN 20000 AND 30000 OR department = 'sal
 
 -- SQL operator precedence
 -- NOT , AND , OR 
+
+SELECT * FROM employee WHERE salary > (SELECT AVG(salary) )
+SELECT * 
+FROM employee 
+WHERE salary < (SELECT MAX(salary) FROM employee);
+-- Find employees whose salary is less than at max salary.
+SELECT * FROM employee WHERE salary > (SELECT MAX(salary) FROM employee);
+-- Find employees whose salary is greater than at least one employee.   
+SELECT * FROM employee WHERE salary > ANY(SELECT salary FROM employee);
+-- Find employees whose salary is less than ALL employees in IT department.
+SELECT * FROM employee WHERE salary < ALL(SELECT salary FROM employee WHERE department = 'IT');
+
+-- Find employees who earn the same salary as someone else.
+SELECT * FROM employee e1 WHERE EXISTS (SELECT 1 FROM employee e2 WHERE e1.salary = e2.salary AND e1.id != e2.id);
