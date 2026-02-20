@@ -32,6 +32,19 @@ class Result {
 
 }
 
+// public static int sockMerchant(int n, List<Integer> ar) {
+//     // Write your code here
+//         HashMap <Integer,Integer> map = new HashMap<>();
+//         for(int a : ar){
+//             map.put(a, map.getOrDefault(a, 0) + 1);
+//         }
+//         int count = 0;
+//         for(int a : map.values()){
+//             count+=a/2;
+//         }
+//         return count;
+//     }
+
 public class sock_pairs {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
