@@ -69,3 +69,6 @@ SELECT * FROM employee WHERE salary < ALL(SELECT salary FROM employee WHERE depa
 
 -- Find employees who earn the same salary as someone else.
 SELECT * FROM employee e1 WHERE EXISTS (SELECT 1 FROM employee e2 WHERE e1.salary = e2.salary AND e1.id != e2.id);
+
+-- Find employees who work in departmetns that have exactly 2 employees.
+SELECT * FROM employee WHERE department in (SELECT department FROM employee GROUP BY department HAVING COUNT(*) = 2);
