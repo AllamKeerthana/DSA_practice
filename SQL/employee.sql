@@ -72,3 +72,9 @@ SELECT * FROM employee e1 WHERE EXISTS (SELECT 1 FROM employee e2 WHERE e1.salar
 
 -- Find employees who work in departmetns that have exactly 2 employees.
 SELECT * FROM employee WHERE department in (SELECT department FROM employee GROUP BY department HAVING COUNT(*) = 2);
+
+-- Find departments where all employees earn more than 25000
+SELECT department FROm employee GROUP BY department HAVING MIN(salary)> 25000;
+
+-- The highest salary in that department must be greater than 50000.\
+SELECT department FROM employee GROUP BY department HAVING MAX(salary) > 50000;
