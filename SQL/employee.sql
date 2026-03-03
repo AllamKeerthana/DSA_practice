@@ -78,3 +78,9 @@ SELECT department FROm employee GROUP BY department HAVING MIN(salary)> 25000;
 
 -- The highest salary in that department must be greater than 50000.\
 SELECT department FROM employee GROUP BY department HAVING MAX(salary) > 50000;
+
+-- Find all the movies directed by John Lasseter
+SELECT Title , Director FROM Movies WHERE Director="John Lasseter"
+
+-- Find all the WALL-* movies 
+SELECT * FROM movies WHERE title LIKE "WALL-_";
