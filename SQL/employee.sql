@@ -105,3 +105,9 @@ SELECT title, year FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5 ;
 
 -- “Movies released in the latest 4 years”
 SELECT Title FROM Movies WHERE YEAR > = (SELECT MAX(Year) - 3 FROM Movies) ORDER BY Year DESC ;
+
+--List all the Canadian cities and their populations
+SELECT city, population FROM north_american_cities WHERE country = "Canada";
+
+--Order all the cities in the United States by their latitude from north to south
+SELECT city, latitude FROM north_american_cities WHERE country = "United States" ORDER BY latitude DESC;
