@@ -90,3 +90,18 @@ SELECT DISTINCT director FROM movies ORDER BY director ASC;
 
 -- List the last four Pixar movies released (ordered from most recent to least) 
 SELECT Title FROM Movies ORDER BY Year DESC LIMIT 4 
+
+--List all directors of Pixar movies (alphabetically), without duplicates
+SELECT DISTINCT Director FROM Movies ORDER BY Director ASC 
+
+--List the first five Pixar movies sorted alphabetically
+SELECT title, year FROM movies ORDER BY year DESC LIMIT 4;
+
+--List the first five Pixar movies sorted alphabetically 
+SELECT title, year FROM movies ORDER BY title ASC LIMIT 5 ;
+
+--List the next five Pixar movies sorted alphabetically
+SELECT title, year FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5 ;
+
+-- “Movies released in the latest 4 years”
+SELECT Title FROM Movies WHERE YEAR > = (SELECT MAX(Year) - 3 FROM Movies) ORDER BY Year DESC ;
