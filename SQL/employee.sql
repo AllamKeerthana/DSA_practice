@@ -111,3 +111,16 @@ SELECT city, population FROM north_american_cities WHERE country = "Canada";
 
 --Order all the cities in the United States by their latitude from north to south
 SELECT city, latitude FROM north_american_cities WHERE country = "United States" ORDER BY latitude DESC;
+
+--Find the domestic and international sales for each movie
+SELECT title, domestic_sales, international_sales FROM movies JOIN boxoffice ON movies.id = boxoffice.movie_id;
+
+--Show the sales numbers for each movie that did better internationally rather than domestically 
+SELECT title, domestic_sales, international_sales FROM movies JOIN boxoffice ON movies.id = boxofffice.movie_id WHERE international_sales > domestic_sales;
+
+--List all the movies by their ratings in descending order
+SELECT *
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id
+ORDER BY Rating DESC
