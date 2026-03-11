@@ -124,3 +124,8 @@ FROM movies
   JOIN boxoffice
     ON movies.id = boxoffice.movie_id
 ORDER BY Rating DESC
+
+--List all buildings and the distinct employee roles in each building (including empty buildings) 
+SELECT DISTINCT building_name, role FROM buildings LEFT JOIN employee ON building_name = building;
+
+--
