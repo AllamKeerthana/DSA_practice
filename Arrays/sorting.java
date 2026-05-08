@@ -10,6 +10,8 @@ public class sorting {
         System.out.println("Sorted array (insertion sort): " + Arrays.toString(arr));
         int[] merged = mergesort(arr);
         System.out.println("Sorted array (merge sort): " + Arrays.toString(merged));
+        mergesortInPlace(arr, 0, arr.length);
+        System.out.println("Sorted array (merge sort in place): " + Arrays.toString(arr));
     }
 
     static void bubble(int[] arr){
@@ -94,5 +96,48 @@ public class sorting {
             k++;
         }
         return ans;
+    }
+
+    static void mergesortInPlace(int[] arr, int s, int e){
+        if(s >= e-1) return;
+        int mid = s + (e - s) / 2;
+        mergesortInPlace(arr,s,mid);
+        mergesortInPlace(arr,mid,e);
+
+        mergeInPlace(arr,s,mid,e);
+
+    }
+
+    static void mergeInPlace(int[] arr, int s, int mid, int e){
+        int ans[] = new int[e-s];
+        int i = s, j = mid, k = 0;
+        while(i<mid && j<e){
+            if(arr[i]<arr[j]){
+                ans[k]=arr[i];
+                i++;
+                k++;
+            }
+            else{
+                ans[k] = arr[j];
+                j++;
+                k++;            }
+        }
+
+        while(i<mid){
+            ans[k] = arr[i];
+            i++;
+            k++;
+        }   
+        
+        while(j<e){
+            ans[k] = arr[j];
+            j++;
+            k++;
+        }
+
+        for(int l = 0; l < ans.length; l++) {
+            arr[s + l] = ans[l];
+        }
+
     }
 }
