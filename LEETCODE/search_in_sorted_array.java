@@ -26,7 +26,6 @@ public class search_in_sorted_array {
                 }
             }
         }
-
         return -1;
     }
 }
