@@ -63,3 +63,53 @@ public class ll_cycle_det_II {
     }
 }
 
+// /**
+//  * Definition for singly-linked list.
+//  * class ListNode {
+//  *     int val;
+//  *     ListNode next;
+//  *     ListNode(int x) {
+//  *         val = x;
+//  *         next = null;
+//  *     }
+//  * }
+//  */
+// public class Solution {
+//     public ListNode detectCycle(ListNode head) {
+//         ListNode fast = head, slow = head,dummy = head;
+//         int len = 1;
+//         while(fast!=null && fast.next!=null){
+//             slow = slow.next;
+//             fast = fast.next.next;
+//             if(slow==fast){
+//                 slow=slow.next;
+//                 while(slow!=fast){
+//                     slow=slow.next;
+//                     len++;
+//                 }
+//                 for(int l = 0;l<len;l++) slow =slow.next;
+//                 while(dummy!=slow){
+//                     dummy = dummy.next;
+//                     slow = slow.next;
+//                 }
+//                 return dummy;
+
+//             }
+//         }
+//         return null;
+//     }
+// }
+
+// if(slow==fast){
+//                 slow=slow.next;
+//                 while(slow!=fast){
+//                     slow=slow.next;
+//                 }
+//                 slow = head;
+//                 while(slow!=fast){
+//                     fast = fast.next;
+//                     slow = slow.next;
+//                 }
+//                 return slow;
+
+//             }
